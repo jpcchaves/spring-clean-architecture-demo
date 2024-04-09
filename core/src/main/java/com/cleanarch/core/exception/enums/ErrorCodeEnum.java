@@ -8,7 +8,8 @@ public enum ErrorCodeEnum {
     TR0001("The operation could not be completed due to insufficient authorization", "TR-0001"),
     TR0002("Insufficient balance", "TR-0002"),
     TR0003("An error occurred when doing a transfer", "TR-0003"),
-    TRP0001("Invalid pin", "TRP-0001");
+    TRP0001("Invalid pin", "TRP-0001"),
+    WA0001("Wallet not found", "WA-0001");
 
 
     private final String message;
