@@ -18,16 +18,12 @@ public class TransactionPin {
     public TransactionPin() {
     }
 
-    public TransactionPin(Long id,
-                          User user,
-                          String pin,
-                          Integer attempt,
-                          Boolean blocked) {
-        this.id = id;
+    public TransactionPin(User user,
+                          String pin) {
         this.user = user;
-        this.pin = pin;
-        this.attempt = attempt;
-        this.blocked = blocked;
+        setPin(pin);
+        attempt = 3;
+        blocked = false;
         this.createdAt = LocalDateTime.now();
     }
 
