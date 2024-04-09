@@ -9,6 +9,7 @@ public enum ErrorCodeEnum {
     TR0002("Insufficient balance", "TR-0002"),
     TR0003("An error occurred when doing a transfer", "TR-0003"),
     TR0004("The transaction was not approved", "TR-0004"),
+    TR0005("An error occurred when creating the transaction", "TR-0005"),
     TRP0001("Invalid pin", "TRP-0001"),
     WA0001("Wallet not found", "WA-0001"),
     AT0001("Failed to authenticate", "AU-0001");
