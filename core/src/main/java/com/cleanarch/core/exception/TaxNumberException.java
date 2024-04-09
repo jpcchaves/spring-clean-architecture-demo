@@ -1,6 +1,6 @@
 package com.cleanarch.core.exception;
 
-public class TaxNumberException extends Exception {
+public class TaxNumberException extends RuntimeException {
     private String code;
 
     public TaxNumberException(String message,
