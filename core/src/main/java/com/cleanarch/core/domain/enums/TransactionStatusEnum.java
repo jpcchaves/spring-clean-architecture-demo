@@ -1,4 +1,4 @@
-package com.cleanarch.domain.enums;
+package com.cleanarch.core.domain.enums;
 
 public enum TransactionStatusEnum {
     CREATED,

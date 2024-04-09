@@ -1,6 +1,6 @@
-package com.cleanarch.domain;
+package com.cleanarch.core.domain;
 
-import com.cleanarch.domain.enums.UserTypeEnum;
+import com.cleanarch.core.domain.enums.UserTypeEnum;
 
 import java.time.LocalDateTime;
 import java.util.Objects;

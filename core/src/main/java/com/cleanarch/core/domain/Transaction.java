@@ -1,6 +1,6 @@
-package com.cleanarch.domain;
+package com.cleanarch.core.domain;
 
-import com.cleanarch.domain.enums.TransactionStatusEnum;
+import com.cleanarch.core.domain.enums.TransactionStatusEnum;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

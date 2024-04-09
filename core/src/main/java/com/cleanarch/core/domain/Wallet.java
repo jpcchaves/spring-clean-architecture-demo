@@ -1,9 +1,9 @@
-package com.cleanarch.domain;
+package com.cleanarch.core.domain;
 
-import com.cleanarch.exception.enums.ErrorCodeEnum;
-import com.cleanarch.domain.enums.UserTypeEnum;
-import com.cleanarch.exception.InsufficientBalanceException;
-import com.cleanarch.exception.UnauthorizedTransferException;
+import com.cleanarch.core.domain.enums.UserTypeEnum;
+import com.cleanarch.core.exception.InsufficientBalanceException;
+import com.cleanarch.core.exception.UnauthorizedTransferException;
+import com.cleanarch.core.exception.enums.ErrorCodeEnum;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

@@ -1,4 +1,4 @@
-package com.cleanarch.exception;
+package com.cleanarch.core.exception;
 
 public class InvalidTransactionPinException extends RuntimeException {
     private String code;

@@ -1,4 +1,4 @@
-package com.cleanarch.exception;
+package com.cleanarch.core.exception;
 
 public class BadRequestException extends RuntimeException {
     private String code;

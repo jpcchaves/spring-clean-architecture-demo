@@ -1,4 +1,4 @@
-package com.cleanarch.exception.enums;
+package com.cleanarch.core.exception.enums;
 
 public enum ErrorCodeEnum {
     ON0001("Invalid tax number", "ON-0001"),

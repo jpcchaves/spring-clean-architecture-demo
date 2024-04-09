@@ -1,4 +1,4 @@
-package com.cleanarch.exception;
+package com.cleanarch.core.exception;
 
 public class UnauthorizedTransferException extends RuntimeException {
     private String code;

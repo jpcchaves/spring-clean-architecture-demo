@@ -1,7 +1,7 @@
-package com.cleanarch.domain;
+package com.cleanarch.core.domain;
 
-import com.cleanarch.exception.enums.ErrorCodeEnum;
-import com.cleanarch.exception.TaxNumberException;
+import com.cleanarch.core.exception.enums.ErrorCodeEnum;
+import com.cleanarch.core.exception.TaxNumberException;
 
 public class TaxNumber {
     private String value;

@@ -1,6 +1,6 @@
 package com.cleanarch.usecase;
 
-import com.cleanarch.domain.Transaction;
+import com.cleanarch.core.domain.Transaction;
 
 public interface TransferUseCase {
     Boolean transfer(Transaction transaction);

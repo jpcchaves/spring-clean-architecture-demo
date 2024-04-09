@@ -1,6 +1,6 @@
 package com.cleanarch.usecase;
 
-import com.cleanarch.domain.Wallet;
+import com.cleanarch.core.domain.Wallet;
 
 import java.math.BigDecimal;
 

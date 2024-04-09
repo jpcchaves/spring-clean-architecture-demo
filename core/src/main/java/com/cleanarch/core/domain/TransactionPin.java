@@ -1,7 +1,7 @@
-package com.cleanarch.domain;
+package com.cleanarch.core.domain;
 
-import com.cleanarch.exception.enums.ErrorCodeEnum;
-import com.cleanarch.exception.InvalidTransactionPinException;
+import com.cleanarch.core.exception.InvalidTransactionPinException;
+import com.cleanarch.core.exception.enums.ErrorCodeEnum;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
