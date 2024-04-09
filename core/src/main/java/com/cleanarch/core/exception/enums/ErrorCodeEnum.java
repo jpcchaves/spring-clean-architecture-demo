@@ -11,8 +11,7 @@ public enum ErrorCodeEnum {
     TR0004("The transaction was not approved", "TR-0004"),
     TRP0001("Invalid pin", "TRP-0001"),
     WA0001("Wallet not found", "WA-0001"),
-    NO0001("An error occurred trying to send a notification to the user", "NO-0001");
-
+    AT0001("Failed to authenticate", "AU-0001");
 
     private final String message;
     private final String code;
