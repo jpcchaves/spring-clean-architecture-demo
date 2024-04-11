@@ -1,7 +1,7 @@
 package com.cleanarch.core.exception;
 
 public class InternalServerError extends RuntimeException {
-    private String code;
+    private final String code;
 
     public InternalServerError(String message,
                                String code) {

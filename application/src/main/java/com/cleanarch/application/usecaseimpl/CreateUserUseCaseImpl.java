@@ -13,9 +13,9 @@ import com.cleanarch.usecase.*;
 import java.math.BigDecimal;
 
 public class CreateUserUseCaseImpl implements CreateUserUseCase {
-    private TaxNumberAvailableUsecase taxNumberAvailableUsecase;
-    private EmailAvailableUseCase emailAvailableUseCase;
-    private CreateUserGateway createUserGateway;
+    private final TaxNumberAvailableUsecase taxNumberAvailableUsecase;
+    private final EmailAvailableUseCase emailAvailableUseCase;
+    private final CreateUserGateway createUserGateway;
 
     public CreateUserUseCaseImpl(TaxNumberAvailableUsecase taxNumberAvailableUsecase,
                                  EmailAvailableUseCase emailAvailableUseCase,

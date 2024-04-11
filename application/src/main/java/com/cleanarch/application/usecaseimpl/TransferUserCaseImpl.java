@@ -6,7 +6,7 @@ import com.cleanarch.usecase.TransferUseCase;
 import java.math.BigDecimal;
 
 public class TransferUserCaseImpl implements TransferUseCase {
-    private TransferGateway transferGateway;
+    private final TransferGateway transferGateway;
 
     public TransferUserCaseImpl(TransferGateway transferGateway) {
         this.transferGateway = transferGateway;

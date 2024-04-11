@@ -7,7 +7,7 @@ import com.cleanarch.core.exception.enums.ErrorCodeEnum;
 import com.cleanarch.usecase.TransactionValidateUseCase;
 
 public class TransactionValidateUseCaseImpl implements TransactionValidateUseCase {
-    private TransactionValidateGateway transactionValidateGateway;
+    private final TransactionValidateGateway transactionValidateGateway;
 
     public TransactionValidateUseCaseImpl(TransactionValidateGateway transactionValidateGateway) {
         this.transactionValidateGateway = transactionValidateGateway;
