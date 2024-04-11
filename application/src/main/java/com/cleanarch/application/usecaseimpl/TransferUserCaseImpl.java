@@ -15,7 +15,8 @@ public class TransferUserCaseImpl implements TransferUseCase {
     @Override
     public Boolean transfer(String fromTaxNumber,
                             String toTaxNumber,
-                            BigDecimal value) {
+                            BigDecimal value,
+                            String pin) {
         return null;
     }
 }
