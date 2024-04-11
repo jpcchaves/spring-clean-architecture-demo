@@ -8,7 +8,6 @@ import java.util.Objects;
 
 public class TransactionPin {
     private Long id;
-    private User user;
     private String pin;
     private Integer attempt;
     private Boolean blocked;
@@ -18,20 +17,16 @@ public class TransactionPin {
     public TransactionPin() {
     }
 
-    public TransactionPin(User user,
-                          String pin) {
-        this.user = user;
+    public TransactionPin(String pin) {
         setPin(pin);
         attempt = 3;
         blocked = false;
         this.createdAt = LocalDateTime.now();
     }
 
-    public TransactionPin(User user,
-                          String pin,
+    public TransactionPin(String pin,
                           Integer attempt,
                           Boolean blocked) {
-        this.user = user;
         this.pin = pin;
         this.attempt = attempt;
         this.blocked = blocked;
@@ -44,14 +39,6 @@ public class TransactionPin {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public String getPin() {
@@ -105,7 +92,6 @@ public class TransactionPin {
         TransactionPin that = (TransactionPin) o;
 
         if (!Objects.equals(id, that.id)) return false;
-        if (!user.equals(that.user)) return false;
         if (!pin.equals(that.pin)) return false;
         if (!attempt.equals(that.attempt)) return false;
         if (!blocked.equals(that.blocked)) return false;
@@ -116,7 +102,6 @@ public class TransactionPin {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + user.hashCode();
         result = 31 * result + pin.hashCode();
         result = 31 * result + attempt.hashCode();
         result = 31 * result + blocked.hashCode();
@@ -129,7 +114,6 @@ public class TransactionPin {
     public String toString() {
         return "TransactionalPin{" +
                 "id=" + id +
-                ", user=" + user +
                 ", pin='" + pin + '\'' +
                 ", attempt=" + attempt +
                 ", blocked=" + blocked +
