@@ -1,6 +1,6 @@
 package com.cleanarch.core.domain;
 
-import com.cleanarch.core.exception.InvalidTransactionPinException;
+import com.cleanarch.core.exception.TransactionPinException;
 import com.cleanarch.core.exception.enums.ErrorCodeEnum;
 
 import java.time.LocalDateTime;
@@ -52,7 +52,7 @@ public class TransactionPin {
 
     private void isValidPin(String pin) {
         if(pin.length() != 8) {
-            throw new InvalidTransactionPinException(ErrorCodeEnum.TRP0001.getCode(), ErrorCodeEnum.TRP0001.getMessage());
+            throw new TransactionPinException(ErrorCodeEnum.TRP0001.getCode(), ErrorCodeEnum.TRP0001.getMessage());
         }
     }
 
@@ -60,8 +60,17 @@ public class TransactionPin {
         return attempt;
     }
 
-    public void setAttempt(Integer attempt) {
-        this.attempt = attempt;
+    public void setAttempt() {
+        if(this.attempt == 1) {
+            this.blocked = true;
+            this.attempt = 0;
+        } else {
+            this.attempt = attempt - 1;
+        }
+    }
+
+    public void restaureAttempts() {
+        this.attempt = 3;
     }
 
     public Boolean getBlocked() {

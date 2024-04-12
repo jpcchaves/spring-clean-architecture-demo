@@ -9,7 +9,7 @@ import com.cleanarch.usecase.CreateTransactionUseCase;
 import java.util.Objects;
 
 public class CreateTransactionUseCaseImpl implements CreateTransactionUseCase {
-    private CreateTransactionGateway createTransactionGateway;
+    private final CreateTransactionGateway createTransactionGateway;
 
     public CreateTransactionUseCaseImpl(CreateTransactionGateway createTransactionGateway) {
         this.createTransactionGateway = createTransactionGateway;

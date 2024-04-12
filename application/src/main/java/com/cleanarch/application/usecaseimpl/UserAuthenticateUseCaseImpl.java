@@ -6,7 +6,7 @@ import com.cleanarch.core.exception.enums.ErrorCodeEnum;
 import com.cleanarch.usecase.UserAuthenticateUseCase;
 
 public class UserAuthenticateUseCaseImpl implements UserAuthenticateUseCase {
-    private UserAuthenticateGateway userAuthenticateGateway;
+    private final UserAuthenticateGateway userAuthenticateGateway;
 
     public UserAuthenticateUseCaseImpl(UserAuthenticateGateway userAuthenticateGateway) {
         this.userAuthenticateGateway = userAuthenticateGateway;

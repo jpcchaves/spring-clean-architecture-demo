@@ -12,7 +12,9 @@ public enum ErrorCodeEnum {
     TR0005("An error occurred when creating the transaction", "TR-0005"),
     TRP0001("Invalid pin", "TRP-0001"),
     WA0001("Wallet not found", "WA-0001"),
-    AT0001("Failed to authenticate", "AU-0001");
+    AT0001("Failed to authenticate", "AU-0001"),
+    PIN0001("Blocked transaction pin", "PIN-0001"),
+    PIN0002("Invalid transaction pin, %d attempt(s) left", "PIN-0002");
 
     private final String message;
     private final String code;
@@ -29,5 +31,9 @@ public enum ErrorCodeEnum {
 
     public String getCode() {
         return code;
+    }
+
+    public static String getPin0002Message(Integer attempt) {
+        return String.format(PIN0002.message, attempt);
     }
 }

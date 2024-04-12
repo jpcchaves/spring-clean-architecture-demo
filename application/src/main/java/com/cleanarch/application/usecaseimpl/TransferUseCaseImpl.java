@@ -5,10 +5,10 @@ import com.cleanarch.usecase.TransferUseCase;
 
 import java.math.BigDecimal;
 
-public class TransferUserCaseImpl implements TransferUseCase {
+public class TransferUseCaseImpl implements TransferUseCase {
     private final TransferGateway transferGateway;
 
-    public TransferUserCaseImpl(TransferGateway transferGateway) {
+    public TransferUseCaseImpl(TransferGateway transferGateway) {
         this.transferGateway = transferGateway;
     }
 
@@ -17,6 +17,8 @@ public class TransferUserCaseImpl implements TransferUseCase {
                             String toTaxNumber,
                             BigDecimal value,
                             String pin) {
+//        TODO: implement transfer operation
+        transferGateway.tranfer(null);
         return null;
     }
 }
