@@ -1,4 +1,4 @@
-package com.cleanarch.persistence.entity;
+package com.cleanarch.infrastructure.persistence.entity;
 
 import com.cleanarch.core.domain.enums.TransactionStatusEnum;
 import jakarta.persistence.*;
