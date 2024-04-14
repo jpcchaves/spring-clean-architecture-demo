@@ -1,4 +1,4 @@
-package com.cleanarch.persistence.entity;
+package com.cleanarch.infrastructure.persistence.entity;
 
 import com.cleanarch.core.domain.enums.UserTypeEnum;
 import jakarta.persistence.*;
@@ -64,7 +64,16 @@ public class UserEntity {
         this.updatedAt = updatedAt;
     }
 
-
+    public UserEntity(String email,
+                      String taxNumber,
+                      String fullName,
+                      UserTypeEnum type) {
+        this.email = email;
+        this.taxNumber = taxNumber;
+        this.fullName = fullName;
+        this.type = type;
+        this.createdAt = LocalDateTime.now();
+    }
 
     public UUID getId() {
         return id;

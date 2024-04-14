@@ -1,4 +1,4 @@
-package com.cleanarch.persistence.entity;
+package com.cleanarch.infrastructure.persistence.entity;
 
 import jakarta.persistence.*;
 
@@ -47,6 +47,18 @@ public class TransactionPinEntity {
         this.attempt = attempt;
         this.blocked = blocked;
         this.createdAt = LocalDateTime.now();
+    }
+
+    public TransactionPinEntity(String pin,
+                                Integer attempt,
+                                Boolean blocked,
+                                LocalDateTime createdAt,
+                                LocalDateTime updatedAt) {
+        this.pin = pin;
+        this.attempt = attempt;
+        this.blocked = blocked;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public Long getId() {

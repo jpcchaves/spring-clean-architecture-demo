@@ -13,7 +13,6 @@ public class User {
     private TaxNumber taxNumber;
     private String fullName;
     private UserTypeEnum type;
-    private TransactionPin transactionPin;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -26,7 +25,7 @@ public class User {
                 TaxNumber taxNumber,
                 String fullName,
                 UserTypeEnum type,
-                TransactionPin transactionPin,
+                LocalDateTime createdAt,
                 LocalDateTime updatedAt) {
         this.id = id;
         this.email = email;
@@ -34,8 +33,7 @@ public class User {
         this.taxNumber = taxNumber;
         this.fullName = fullName;
         this.type = type;
-        this.transactionPin = transactionPin;
-        this.createdAt = LocalDateTime.now();
+        this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
 
@@ -43,14 +41,12 @@ public class User {
                 String password,
                 TaxNumber taxNumber,
                 String fullName,
-                UserTypeEnum type,
-                TransactionPin transactionPin) {
+                UserTypeEnum type) {
         this.email = email;
         this.password = password;
         this.taxNumber = taxNumber;
         this.fullName = fullName;
         this.type = type;
-        this.transactionPin = transactionPin;
         this.createdAt = LocalDateTime.now();
     }
 
@@ -102,14 +98,6 @@ public class User {
         this.type = type;
     }
 
-    public TransactionPin getTransactionalPin() {
-        return transactionPin;
-    }
-
-    public void setTransactionalPin(TransactionPin transactionPin) {
-        this.transactionPin = transactionPin;
-    }
-
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -136,7 +124,6 @@ public class User {
         if (!taxNumber.equals(user.taxNumber)) return false;
         if (!fullName.equals(user.fullName)) return false;
         if (type != user.type) return false;
-        if (!transactionPin.equals(user.transactionPin)) return false;
         if (!createdAt.equals(user.createdAt)) return false;
         return Objects.equals(updatedAt, user.updatedAt);
     }
@@ -149,7 +136,6 @@ public class User {
         result = 31 * result + taxNumber.hashCode();
         result = 31 * result + fullName.hashCode();
         result = 31 * result + type.hashCode();
-        result = 31 * result + transactionPin.hashCode();
         result = 31 * result + createdAt.hashCode();
         result = 31 * result + (updatedAt != null ? updatedAt.hashCode() : 0);
         return result;
@@ -164,7 +150,6 @@ public class User {
                 ", taxNumber=" + taxNumber +
                 ", fullName='" + fullName + '\'' +
                 ", type=" + type +
-                ", transactionalPin=" + transactionPin +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 '}';

@@ -1,4 +1,4 @@
-package com.cleanarch.persistence.entity;
+package com.cleanarch.infrastructure.persistence.entity;
 
 import com.cleanarch.core.domain.enums.TransactionStatusEnum;
 import jakarta.persistence.*;
@@ -9,6 +9,8 @@ import java.util.Objects;
 @Entity
 @Table(name = "transactions")
 public class TransactionEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
