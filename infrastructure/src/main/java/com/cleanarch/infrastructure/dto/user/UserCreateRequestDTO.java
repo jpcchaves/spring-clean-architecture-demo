@@ -2,7 +2,6 @@ package com.cleanarch.infrastructure.dto.user;
 
 import com.cleanarch.core.domain.TaxNumber;
 import com.cleanarch.core.domain.enums.UserTypeEnum;
-import com.cleanarch.infrastructure.dto.wallet.WalletRequestDTO;
 
 public class UserCreateRequestDTO {
   private String email;
@@ -10,7 +9,7 @@ public class UserCreateRequestDTO {
   private TaxNumber taxNumber;
   private String fullName;
   private UserTypeEnum type;
-  private WalletRequestDTO walletRequestDTO;
+  private String pin;
 
   public UserCreateRequestDTO() {
   }
@@ -20,13 +19,13 @@ public class UserCreateRequestDTO {
                               TaxNumber taxNumber,
                               String fullName,
                               UserTypeEnum type,
-                              WalletRequestDTO walletRequestDTO) {
+                              String pin) {
     this.email = email;
     this.password = password;
     this.taxNumber = taxNumber;
     this.fullName = fullName;
     this.type = type;
-    this.walletRequestDTO = walletRequestDTO;
+    this.pin = pin;
   }
 
   public String getEmail() {
@@ -69,11 +68,11 @@ public class UserCreateRequestDTO {
     this.type = type;
   }
 
-  public WalletRequestDTO getWalletRequestDTO() {
-    return walletRequestDTO;
+  public String getPin() {
+    return pin;
   }
 
-  public void setWalletRequestDTO(WalletRequestDTO walletRequestDTO) {
-    this.walletRequestDTO = walletRequestDTO;
+  public void setPin(String pin) {
+    this.pin = pin;
   }
 }
