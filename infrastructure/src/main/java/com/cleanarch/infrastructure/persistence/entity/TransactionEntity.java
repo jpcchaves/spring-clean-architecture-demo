@@ -9,6 +9,8 @@ import java.util.Objects;
 @Entity
 @Table(name = "transactions")
 public class TransactionEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
