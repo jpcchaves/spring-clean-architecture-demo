@@ -12,6 +12,6 @@ public class TaxNumberAvailableUseCaseImpl implements TaxNumberAvailableUsecase 
 
   @Override
     public Boolean isAvailable(String taxNumber) {
-        return null;
+        return true;
     }
 }

@@ -8,14 +8,18 @@ import com.cleanarch.core.exception.EmailException;
 import com.cleanarch.core.exception.InternalServerError;
 import com.cleanarch.core.exception.TaxNumberException;
 import com.cleanarch.core.exception.enums.ErrorCodeEnum;
-import com.cleanarch.usecase.*;
+import com.cleanarch.usecase.CreateUserUseCase;
+import com.cleanarch.usecase.EmailAvailableUseCase;
+import com.cleanarch.usecase.TaxNumberAvailableUsecase;
 
 import java.math.BigDecimal;
+import java.util.logging.Logger;
 
 public class CreateUserUseCaseImpl implements CreateUserUseCase {
     private final TaxNumberAvailableUsecase taxNumberAvailableUsecase;
     private final EmailAvailableUseCase emailAvailableUseCase;
     private final CreateUserGateway createUserGateway;
+    private final static Logger logger = Logger.getLogger(CreateUserUseCaseImpl.class.getName());
 
     public CreateUserUseCaseImpl(TaxNumberAvailableUsecase taxNumberAvailableUsecase,
                                  EmailAvailableUseCase emailAvailableUseCase,
@@ -27,11 +31,12 @@ public class CreateUserUseCaseImpl implements CreateUserUseCase {
 
     @Override
     public void create(User user, String pin) {
-       if(taxNumberAvailableUsecase.isAvailable(user.getTaxNumber().getValue())) {
+      logger.info(user.getTaxNumber().getValue());
+       if(!taxNumberAvailableUsecase.isAvailable(user.getTaxNumber().getValue())) {
             throw new TaxNumberException(ErrorCodeEnum.ON0002.getCode(), ErrorCodeEnum.ON0002.getMessage());
        }
 
-       if(emailAvailableUseCase.isAvailable(user.getEmail())) {
+       if(!emailAvailableUseCase.isAvailable(user.getEmail())) {
            throw new EmailException(ErrorCodeEnum.ON0003.getCode(), ErrorCodeEnum.ON0003.getMessage());
        }
 

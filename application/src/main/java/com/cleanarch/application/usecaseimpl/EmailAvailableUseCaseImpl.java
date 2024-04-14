@@ -13,6 +13,6 @@ public class EmailAvailableUseCaseImpl implements EmailAvailableUseCase {
 
     @Override
     public boolean isAvailable(String email) {
-        return false;
+        return true;
     }
 }

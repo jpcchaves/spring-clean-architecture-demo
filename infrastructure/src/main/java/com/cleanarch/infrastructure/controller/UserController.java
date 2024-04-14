@@ -20,7 +20,7 @@ public class UserController {
   }
 
   @PostMapping
-  public ResponseEntity<UserResponseDTO> userResponseDTOResponseEntity(@RequestBody UserCreateRequestDTO requestDTO) {
+  public ResponseEntity<UserResponseDTO> userResponseDTOResponseEntity(@RequestBody UserCreateRequestDTO requestDTO) throws Exception {
     return ResponseEntity.status(HttpStatus.CREATED).body(userService.create(requestDTO));
   }
 }

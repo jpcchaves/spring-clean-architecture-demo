@@ -1,5 +1,6 @@
 package com.cleanarch.infrastructure.mapper;
 
+import com.cleanarch.core.domain.TaxNumber;
 import com.cleanarch.core.domain.User;
 import com.cleanarch.infrastructure.dto.user.UserCreateRequestDTO;
 import com.cleanarch.infrastructure.dto.user.UserResponseDTO;
@@ -16,11 +17,11 @@ public class UserMapper {
   }
 
   public UserEntity toUserEntity(User user) {
-    return mapperUtils.parseObject(user, UserEntity.class);
+    return new UserEntity(user.getEmail(),user.getTaxNumber().getValue(), user.getFullName(), user.getType());
   }
 
-  public User toCoreUser(UserCreateRequestDTO userRequestDTO) {
-    return mapperUtils.parseObject(userRequestDTO, User.class);
+  public User toCoreUser(UserCreateRequestDTO userRequestDTO) throws Exception {
+    return new User(userRequestDTO.getEmail(), userRequestDTO.getPassword(), new TaxNumber(userRequestDTO.getTaxNumber()), userRequestDTO.getFullName(), userRequestDTO.getType());
   }
 
   public User toCoreUser(UserEntity userEntity) {

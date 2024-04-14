@@ -1,12 +1,11 @@
 package com.cleanarch.infrastructure.dto.user;
 
-import com.cleanarch.core.domain.TaxNumber;
 import com.cleanarch.core.domain.enums.UserTypeEnum;
 
 public class UserCreateRequestDTO {
   private String email;
   private String password;
-  private TaxNumber taxNumber;
+  private String taxNumber;
   private String fullName;
   private UserTypeEnum type;
   private String pin;
@@ -16,7 +15,7 @@ public class UserCreateRequestDTO {
 
   public UserCreateRequestDTO(String email,
                               String password,
-                              TaxNumber taxNumber,
+                              String taxNumber,
                               String fullName,
                               UserTypeEnum type,
                               String pin) {
@@ -44,11 +43,11 @@ public class UserCreateRequestDTO {
     this.password = password;
   }
 
-  public TaxNumber getTaxNumber() {
+  public String getTaxNumber() {
     return taxNumber;
   }
 
-  public void setTaxNumber(TaxNumber taxNumber) {
+  public void setTaxNumber(String taxNumber) {
     this.taxNumber = taxNumber;
   }
 
@@ -74,5 +73,17 @@ public class UserCreateRequestDTO {
 
   public void setPin(String pin) {
     this.pin = pin;
+  }
+
+  @Override
+  public String toString() {
+    return "UserCreateRequestDTO{" +
+        "email='" + email + '\'' +
+        ", password='" + password + '\'' +
+        ", taxNumber='" + taxNumber + '\'' +
+        ", fullName='" + fullName + '\'' +
+        ", type=" + type +
+        ", pin='" + pin + '\'' +
+        '}';
   }
 }

@@ -64,7 +64,16 @@ public class UserEntity {
         this.updatedAt = updatedAt;
     }
 
-
+    public UserEntity(String email,
+                      String taxNumber,
+                      String fullName,
+                      UserTypeEnum type) {
+        this.email = email;
+        this.taxNumber = taxNumber;
+        this.fullName = fullName;
+        this.type = type;
+        this.createdAt = LocalDateTime.now();
+    }
 
     public UUID getId() {
         return id;

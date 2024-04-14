@@ -4,5 +4,5 @@ import com.cleanarch.infrastructure.dto.user.UserCreateRequestDTO;
 import com.cleanarch.infrastructure.dto.user.UserResponseDTO;
 
 public interface UserService {
-  UserResponseDTO create(UserCreateRequestDTO userDTO);
+  UserResponseDTO create(UserCreateRequestDTO userDTO) throws Exception;
 }
