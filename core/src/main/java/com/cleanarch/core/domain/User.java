@@ -25,6 +25,7 @@ public class User {
                 TaxNumber taxNumber,
                 String fullName,
                 UserTypeEnum type,
+                LocalDateTime createdAt,
                 LocalDateTime updatedAt) {
         this.id = id;
         this.email = email;
@@ -32,7 +33,7 @@ public class User {
         this.taxNumber = taxNumber;
         this.fullName = fullName;
         this.type = type;
-        this.createdAt = LocalDateTime.now();
+        this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
 
