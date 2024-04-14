@@ -49,6 +49,18 @@ public class TransactionPinEntity {
         this.createdAt = LocalDateTime.now();
     }
 
+    public TransactionPinEntity(String pin,
+                                Integer attempt,
+                                Boolean blocked,
+                                LocalDateTime createdAt,
+                                LocalDateTime updatedAt) {
+        this.pin = pin;
+        this.attempt = attempt;
+        this.blocked = blocked;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
     public Long getId() {
         return id;
     }
