@@ -1,7 +1,7 @@
 package com.cleanarch.usecase;
 
-import java.math.BigDecimal;
+import com.cleanarch.core.domain.Transaction;
 
 public interface TransferUseCase {
-    Boolean transfer(String fromTaxNumber, String toTaxNumber, BigDecimal value, String pin);
+    Boolean transfer(Transaction transaction);
 }
